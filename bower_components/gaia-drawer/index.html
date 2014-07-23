@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>GaiaDrawer Demo</title>
+  <meta name="description" content="Demo app for gaia-drawer" />
+
+  <script>window.GAIA_DRAWER_BASE_URL='./';</script>
+
+  <!-- Demo Dependencies -->
+  <script src="bower_components/gaia-header/dist/script.js"></script>
+  <script src="script.js"></script>
+
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      font-size: 10px;
+      background-color: #fff;
+    }
+
+    body {
+      font: 16px sans-serif;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      float: left;
+      height: 400px;
+      border: solid 1px #eee;
+      overflow: hidden;
+    }
+
+    .half {
+      width: 50%;
+    }
+
+    .third {
+      width: 33.33%;
+    }
+
+    gaia-drawer {
+      position: absolute;
+      top: 50px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+    }
+  </style>
+</head>
+<body role="application">
+  <div class="slot third">
+    <gaia-header action="menu"><h1>Title</h1></gaia-header>
+    <gaia-drawer open>
+      <section data-type="list">
+        <ul>
+          <li><p>List Item 1</p></li>
+          <li><p>List Item 2</p></li>
+          <li><p>List Item 3</p></li>
+        </ul>
+      </section>
+    </gaia-drawer>
+  </div>
+  <div class="slot third">
+    <gaia-header action="menu"><h1>Title</h1></gaia-header>
+    <gaia-drawer>
+      <section data-type="list">
+        <ul>
+          <li><p>List Item 1</p></li>
+          <li><p>List Item 2</p></li>
+          <li><p>List Item 3</p></li>
+        </ul>
+      </section>
+    </gaia-drawer>
+  </div>
+  <div class="slot third">
+    <gaia-header action="menu"><h1>Title</h1></gaia-header>
+    <gaia-drawer>
+      <section data-type="list">
+        <ul>
+          <li><p>List Item 1</p></li>
+          <li><p>List Item 2</p></li>
+          <li><p>List Item 3</p></li>
+          <li><p>List Item 1</p></li>
+          <li><p>List Item 2</p></li>
+          <li><p>List Item 3</p></li>
+          <li><p>List Item 1</p></li>
+          <li><p>List Item 2</p></li>
+          <li><p>List Item 3</p></li>
+        </ul>
+      </section>
+    </gaia-drawer>
+  </div>
+  <div class="half"></div>
+  <div class="half"></div>
+<script>
+
+[].forEach.call(document.querySelectorAll('.slot'), function(slot) {
+  var header = slot.querySelector('gaia-header');
+  var drawer = slot.querySelector('gaia-drawer');
+  header.addEventListener('action', function() {
+    drawer.toggle();
+  });
+});
+
+window.addEventListener('WebComponentsReady', function() {
+  console.log('WebComponentsReady');
+});
+
+</script>
+</body>
+</html>

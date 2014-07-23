@@ -1,0 +1,28 @@
+{
+  "name": "gaia-drawer",
+  "version": "0.3.0",
+  "homepage": "https://github.com/gaia-components/gaia-drawer",
+  "authors": [
+    "Wilson Page <wilsonpage@me.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "gaia-header": "gaia-components/gaia-header#~0.2.2"
+  },
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.0",
+    "commit": "bbedd55527c6586495b36f2264f06dfcda3880b1"
+  },
+  "_source": "git://github.com/gaia-components/gaia-drawer.git",
+  "_target": "~0.3.0",
+  "_originalSource": "gaia-components/gaia-drawer"
+}

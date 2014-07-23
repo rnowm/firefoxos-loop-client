@@ -1,13 +1,5 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+html {
   font-size: 10px;
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
-  font-family: 'MozTT', sans-serif;
-  position: absolute;
 }
 
 .panel {
@@ -41,4 +33,3 @@ button::-moz-focus-inner {
 .hide {
   display: none;
 }
-

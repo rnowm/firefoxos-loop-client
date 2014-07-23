@@ -13,6 +13,8 @@
     <link rel="stylesheet" type="text/css" href="style/bb/switches.css">
     <link rel="stylesheet" type="text/css" href="style/bb/lists.css">
     <link rel="stylesheet" type="text/css" href="style/bb/headers.css">
+    <link rel="stylesheet" type="text/css" href="style/bb/buttons.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/gaia-layout/style.css">
 
     <link rel="stylesheet" type="text/css" href="style/reset.css">
     <link rel="stylesheet" type="text/css" href="style/share.css">
@@ -24,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="style/transitions.css">
     <link rel="stylesheet" type="text/css" href="style/wizard.css">
     <link rel="stylesheet" type="text/css" href="style/splash_screen.css">
-    
+
     <link rel="resource" type="application/l10n" href="locales/locales.ini">
     <link rel="resource" type="application/l10n" href="locales/date.ini">
 
@@ -39,6 +41,8 @@
     <script defer src="libs/hawk.js"></script>
     <script defer src="libs/sjcl.min.js"></script>
     <script defer src="libs/token.js"></script>
+
+    <script defer src="bower_components/gaia-drawer/script.js"></script>
 
     <script defer src="js/helpers/contacts_helper.js"></script>
     <script defer src="js/helpers/action_log_db.js"></script>
@@ -57,7 +61,7 @@
     <script defer src="js/screens/wizard/wizard.js"></script>
 
     <script defer src="js/controller.js"></script>
-    
+
     <script defer src="js/screens/loading_overlay.js"></script>
     <script defer src="js/screens/webview_overlay.js"></script>
     <script defer src="js/screens/option_menu.js"></script>
@@ -84,7 +88,7 @@
     </section>
     <section id="splash-screen" class="show">
     </section>
-    <!-- 
+    <!--
       Every relevant screen which have it own 'panel'
     -->
     <section id="wizard-panel" class="panel main">
@@ -158,11 +162,37 @@
     </section>
     <section id="calllog-panel" class="panel main" role="region">
       <header>
-        <menu type="toolbar">
-          <a id="open-settings-button"><span class="icon icon-menu"></span></a>
-        </menu>
+        <a id="drawer-button"><span class="icon icon-menu"></span></a>
         <h1>Loop</h1>
       </header>
+      <gaia-drawer id="settings-panel" class="settings">
+        <section class="gaia-list">
+          <ul>
+            <li>
+              <label class="pack-switch active">
+                <input id="video-default-setting" type="checkbox" checked>
+                <span>Enable video by default</span>
+              </label>
+            </li>
+            <li id="settings-clean-calls-button" class="active">
+              <p>Clean calls</p>
+            </li>
+            <li id="settings-clean-urls-button" class="active">
+              <p>Clean shared urls</p>
+            </li>
+            <li>
+              <p>Version:</p>
+              <p id="settings-commit-hash-tag">Unknown</p>
+            </li>
+            <li class="vbox">
+              <p id="settings-logout-identity"></p>
+              <button id="settings-logout-button">
+                Logout
+              </button>
+            </li>
+          </ul>
+        </section>
+      </gaia-drawer>
       <section id="calllog-container" data-type="list">
         <nav>
           <ul role="tablist" class="bb-tablist" data-type="filter">
@@ -253,47 +283,6 @@
         </ul>
       </section>
     </section>
-    <section id="settings-panel" class="panel settings skin-organic" role="region">
-      <header>
-        <button id="settings-close-button"><span class="icon icon-close">close</span></button>
-        <h1>Settings</h1>
-      </header>
-      <section data-type="list">
-        <ul>
-          <li>
-            <a>
-              <p>Enable video by default</p>
-              <label class="pack-switch">
-                <input id="video-default-setting" type="checkbox" checked>
-                <span></span>
-              </label>
-            </a>
-          </li>
-          <li id="settings-clean-calls-button">
-            <a>
-              <p>Clean calls</p>
-            </a>
-          </li>
-          <li id="settings-clean-urls-button">
-            <a>
-              <p>Clean shared urls</p>
-            </a>
-          </li>
-          <li>
-            <a>
-              <p>Version:</p>
-              <p id="settings-commit-hash-tag">Unknown</p>
-            </a>
-          </li>
-        </ul>
-        <div class="settings-logout-section">
-          <p id="settings-logout-identity"></p>
-          <button id="settings-logout-button">
-            Logout
-          </button>
-        </div>
-      </section>
-    </section>
 
     <!-- Templates -->
 
@@ -317,7 +306,7 @@
       -->
     </div>
     <div id="calls-without-url-tmpl" class="hide">
-      <!-- 
+      <!--
       <aside class="pack-end">
         <span data-type="img" class="generic-image-aside"></span>
       </aside>

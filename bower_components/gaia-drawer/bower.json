@@ -1,0 +1,19 @@
+{
+  "name": "gaia-drawer",
+  "version": "0.3.0",
+  "homepage": "https://github.com/gaia-components/gaia-drawer",
+  "authors": [
+    "Wilson Page <wilsonpage@me.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "gaia-header": "gaia-components/gaia-header#~0.2.2"
+  }
+}

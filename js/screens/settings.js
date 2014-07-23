@@ -1,9 +1,8 @@
 (function(exports) {
   'use strict';
 
-  var _settingsPanel, _closeSettingsButton, _logoutSettingsButton,
-      _cleanCallsButton, _cleanUrlsButton, _videoDefaultCheck,
-      _commitHashTag;
+  var _settingsPanel, _logoutSettingsButton, _cleanCallsButton,
+      _cleanUrlsButton, _videoDefaultCheck, _commitHashTag;
 
   var _isVideoDefault = true;
   const VIDEO_SETTING = 'video-default';
@@ -27,7 +26,6 @@
         return;
       }
       _settingsPanel = document.getElementById('settings-panel');
-      _closeSettingsButton = document.getElementById('settings-close-button');
       _logoutSettingsButton = document.getElementById('settings-logout-button');
       _cleanCallsButton = document.getElementById('settings-clean-calls-button');
       _cleanUrlsButton = document.getElementById('settings-clean-urls-button');
@@ -71,11 +69,6 @@
           this.hide();
         }.bind(this)
       );
-      
-      _closeSettingsButton.addEventListener(
-        'click',
-         this.hide.bind(this)
-      );
 
       _logoutSettingsButton.addEventListener(
         'click',
@@ -89,12 +82,6 @@
       if (_commitHashTag && Version.id) {
         _commitHashTag.textContent = Version.id;
       }
-    },
-    show: function s_show() {
-      _settingsPanel.classList.add('show');
-    },
-    hide: function s_hide() {
-      _settingsPanel.classList.remove('show');
     }
   };
 

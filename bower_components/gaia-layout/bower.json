@@ -1,0 +1,16 @@
+{
+  "name": "gaia-layout",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gaia-components/gaia-layout",
+  "authors": [
+    "rnowm <arnau@arnaumarch.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

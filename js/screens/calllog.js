@@ -593,10 +593,12 @@
       callsTabSelector = document.getElementById('calls-section-filter');
       urlsTabSelector = document.getElementById('urls-section-filter');
 
-      // Add a listener to the right button
-      document.getElementById('open-settings-button').addEventListener(
+      // show/hide settings using drawer component
+      document.getElementById('drawer-button').addEventListener(
         'click',
-        Settings.show
+        function() {
+          document.getElementById('settings-panel').toggle();
+        }
       );
 
       document.getElementById('call-from-loop').addEventListener(
