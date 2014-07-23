@@ -1,0 +1,25 @@
+{
+  "name": "gaia-layout",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gaia-components/gaia-layout",
+  "authors": [
+    "rnowm <arnau@arnaumarch.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "ef0d5f1a5677c32e3e7680bfdc0aa806603272df"
+  },
+  "_source": "git://github.com/gaia-components/gaia-layout.git",
+  "_target": "~0.1.0",
+  "_originalSource": "gaia-components/gaia-layout"
+}

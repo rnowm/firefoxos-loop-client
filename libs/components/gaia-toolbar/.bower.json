@@ -1,0 +1,29 @@
+{
+  "name": "gaia-toolbar",
+  "homepage": "https://github.com/gaia-components/gaia-toolbar",
+  "authors": [
+    "rnowm <arnau@arnaumarch.com>"
+  ],
+  "main": "script.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gaia-component-utils": "gaia-components/gaia-component-utils#~0.1.0",
+    "gaia-icons": "gaia-components/gaia-icons#master"
+  },
+  "_release": "5d043ea1ea",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5d043ea1ea4aee5d899f0994461537a24767963b"
+  },
+  "_source": "git://github.com/gaia-components/gaia-toolbar.git",
+  "_target": "master",
+  "_originalSource": "gaia-components/gaia-toolbar"
+}

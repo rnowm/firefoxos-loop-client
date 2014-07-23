@@ -1,0 +1,20 @@
+{
+  "name": "firefoxos-loop-client",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mozilla-b2g/firefoxos-loop-client",
+  "authors": [
+    "The Gaia Team"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gaia-toolbar": "gaia-components/gaia-toolbar#master",
+    "gaia-layout": "gaia-components/gaia-layout#~0.1.0"
+  }
+}
