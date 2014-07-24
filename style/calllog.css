@@ -1,27 +1,30 @@
+
 #calllog-container {
+/*
   height: calc(100% - 5rem);
   padding: 0 !important;
   position: relative;
+*/
+  overflow: hidden;
 }
-
+/*
 #calllog-not-empty {
   height: 100%;
   width: 100%;
   position: relative;
   overflow: hidden;
 }
-
+*/
 .calllog-sections-container {
-  height: calc(100% - 4rem);
+  height: 100%;
   width: 200%;
+  overflow: hidden;
   transition: all .2s ease-in-out;
 }
 
 .calllog-section {
-  float: left;
   width: 50%;
-  height: 100%;
- overflow: hidden;
+  overflow: scroll;
 }
 
 .section-empty {
@@ -40,7 +43,7 @@
   width: 100%;
   text-align: center;
 }
-
+/*
 .section-entries {
   background: white;
   width: 100%;
@@ -48,11 +51,13 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+*/
 
 .section-entries li * {
   pointer-events: none;
 }
 
+/*
 #urls-section.empty .section-empty {
   background-image: url(images/Link_icon_big@2,25x.png);
   background-repeat: no-repeat;
@@ -129,7 +134,7 @@
 }
 
 .generic-image-aside {
-  /*background: red !important;*/
+  background: red !important;
   background-image: url(images/icon_contact@2,25x.png) !important;
   background-size: 60%  !important;
   background-position: center !important;
@@ -181,11 +186,63 @@
   border-radius: 4rem;
   overflow: hidden;
 }
+*/
+
+/* icons */
+.call-type-icon {
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  position: relative;
+  margin: 0 0.3rem 0 0.8rem;
+  text-align: center;
+}
+
+.call-type-icon.icon-video,
+.call-type-icon.icon-mic {
+  color: #00adad;
+}
+
+.call-type-icon .icon-arrow-back,
+.call-type-icon .icon-arrow-forward {
+  position: absolute;
+  color: #9f9f9f;
+  left: 0.5rem;
+  top: 2rem;
+  font-size: 1.5rem;
+  text-shadow: 0.2rem 0.2rem 0 #fff;
+}
+
+.icon-missed {
+  color: #be1d1d;
+}
+
+/* List elelments */
+.gaia-list li p {
+  margin-left: 0;
+}
+
+.gaia-list .primary-info {
+  font-size: 1.8rem;
+}
+
+.gaia-list .url {
+  margin-left: 3.5rem;
+  font-size: 1.8rem;
+  color: #858585;
+}
+
+.gaia-list .call-time,
+.gaia-list .retry-count {
+  font-size: 1.8rem;
+  color: #858585;
+}
+
 
 /*
   MEDIA QUERIES FOR Hamachi or similar
 */
-
+/*
 @media all and (max--moz-device-pixel-ratio: 1) {
 
   .call-background-bar {
@@ -212,3 +269,4 @@
     background-position: center 1rem;
   }
 }
+*/
