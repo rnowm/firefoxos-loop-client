@@ -225,16 +225,16 @@ h1, h2, h3 {
   left: calc(50% - 7.5rem);
   width: 15rem;
   height: 15rem;
-  background-color: #474747;
-  background-size: 15rem 15rem;
-  background-repeat: no-repeat;
+  background: #474747 url("images/big_mask.png") center no-repeat;
+  background-size: 20rem;
   color: #27c8c2;
   opacity: 1;
   z-index: 10;
   font-weight: 300;
-  mask: url("images/big_mask.svg#logo_mask");
+/*  mask: url("images/big_mask.svg#logo_mask");*/
  }
 
+/*
 .remote-bubble-shadow {
   position: absolute;
   top: 8rem;
@@ -246,6 +246,7 @@ h1, h2, h3 {
   background-repeat: no-repeat;
   z-index: 5;
 }
+*/
 
 .remote-bubble > div {
   position: absolute;
@@ -267,10 +268,13 @@ h1, h2, h3 {
   bottom: 2rem !important;
   left: calc(50% - 4rem) !important;
   z-index: 10;
-  
-  mask: url("images/small_mask.svg#logo_mask") !important;
+
+  background: #474747 url("images/small_mask.png") center no-repeat !important;
+  background-size: 10rem;
+/*  mask: url("images/small_mask.svg#logo_mask") !important;*/
 }
 
+/*
 .local-bubble-shadow {
   height: 8rem;
   width: 8rem;
@@ -284,6 +288,7 @@ h1, h2, h3 {
   background-repeat: no-repeat;
   z-index: 5;
 }
+*/
 
 #local-video {
   background: #474747;
@@ -628,8 +633,7 @@ body[data-feedback='true'] #feedback {
 
 #fullscreen-mask {
   z-index: 5;
-  background-image: url(images/gradient.png);
-  background-size: auto 100%;
+  background: #686f72;
   top: 0;
   left: 0;
   position: absolute;
@@ -765,6 +769,7 @@ body[data-remote-video="on"] #fullscreen-image {
     background-image: url(images/ico_check@1.5x.png);
   }
 
+/*
   .remote-bubble-shadow {
     background-image: url(images/big_shadow@1.5x.png);
   }
@@ -772,6 +777,7 @@ body[data-remote-video="on"] #fullscreen-image {
   .local-bubble-shadow {
     background-image: url(images/small_shadow@1.5x.png);
   }
+*/
 
   .action-button span,
   .feedback-icon {
@@ -786,6 +792,7 @@ body[data-remote-video="on"] #fullscreen-image {
     background-image: url(images/ico_check@2x.png);
   }
 
+/*
   .remote-bubble-shadow {
     background-image: url(images/big_shadow@2x.png);
   }
@@ -793,6 +800,7 @@ body[data-remote-video="on"] #fullscreen-image {
   .local-bubble-shadow {
     background-image: url(images/small_shadow@2x.png);
   }
+*/
 
   .action-button span,
   .feedback-icon {
@@ -807,6 +815,7 @@ body[data-remote-video="on"] #fullscreen-image {
     background-image: url(images/ico_check@2.25x.png);
   }
 
+/*
   .remote-bubble-shadow {
     background-image: url(images/big_shadow@2.25x.png);
   }
@@ -814,6 +823,7 @@ body[data-remote-video="on"] #fullscreen-image {
   .local-bubble-shadow {
     background-image: url(images/small_shadow@2.25x.png);
   }
+*/
 
   .action-button span,
   .feedback-icon {
