@@ -27,6 +27,8 @@
     <link rel="stylesheet" type="text/css" href="style/transitions.css">
     <link rel="stylesheet" type="text/css" href="style/wizard.css">
     <link rel="stylesheet" type="text/css" href="style/splash_screen.css">
+    <link rel="stylesheet" type="text/css" href="style/offline_screen.css">
+    <link rel="stylesheet" type="text/css" href="style/server_failure_screen.css">
 
     <link rel="manifest" href="manifest.webapp">
     <link rel="localization" href="locales/loop.{locale}.properties">
@@ -61,6 +63,8 @@
     <script defer src="js/helpers/metrics.js"></script>
     <script defer src="js/helpers/telemetry.js"></script>
 
+    <script defer src="js/screens/wizard/server_failure_screen.js"></script>
+    <script defer src="js/screens/wizard/offline_screen.js"></script>
     <script defer src="js/screens/wizard/authenticate.js"></script>
     <script defer src="js/screens/wizard/tutorial.js"></script>
     <script defer src="js/screens/wizard/wizard.js"></script>
@@ -93,6 +97,32 @@
       <iframe id="webview-iframe" src=""></iframe>
     </section>
     <section id="splash-screen" class="show">
+    </section>
+    <section id="offline-screen">
+      <form role="dialog" data-type="confirm">
+        <section>
+          <h1 data-service-name></h1>
+          <p data-l10n-id="noConnection"></p>
+	  <p>
+	    <button id="offline-settings-button" data-l10n-id="checkSettings"></button>
+	  </p>
+        </section>
+        <menu>
+          <button id="offline-ok" data-l10n-id="ok">Ok</button>
+          <button id="offline-retry" data-l10n-id="retry">Retry</button>
+        </menu>
+      </form>
+    </section>
+    <section id="server-failure-screen">
+      <form role="dialog" data-type="confirm">
+        <section>
+          <h1 data-service-name></h1>
+          <p data-l10n-id="genericServerError"></p>
+        </section>
+        <menu>
+          <button id="server-failure-ok" data-l10n-id="ok" class="full">Ok</button>
+        </menu>
+      </form>
     </section>
     <!--
       Every relevant screen which have it own 'panel'

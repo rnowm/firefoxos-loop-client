@@ -5,8 +5,7 @@
 
   function _onButtonClick(id) {
     if (!navigator.onLine) {
-      // TODO: localize
-      alert(navigator.mozL10n.get('noConnection'));
+      OfflineScreen.show();
       return;
     }
     Controller.authenticate(id);
