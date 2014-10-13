@@ -34,6 +34,7 @@
   }
 
   function _onloginerror(event) {
+    ServerFailureScreen.show();
     Wizard.init(false /* isFirstUse */);
     _hideSplash();
     LoadingOverlay.hide();
