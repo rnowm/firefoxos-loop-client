@@ -56,3 +56,8 @@ button::-moz-focus-inner {
   color: #00adad;
   border-bottom: 0.3rem solid #00adad;
 }
+
+form[role="dialog"][data-type="confirm"] section button {
+  margin-left: -1.5rem;
+  width: calc(100% + 3rem)
+}

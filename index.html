@@ -103,13 +103,15 @@
         <section>
           <h1 data-service-name></h1>
           <p data-l10n-id="noConnection"></p>
-	  <p>
-	    <button id="offline-settings-button" data-l10n-id="checkSettings"></button>
-	  </p>
+          <ul class="skin-dark">
+            <li>
+            <button id="offline-settings-button" class="icon icon-settings" data-l10n-id="checkSettings"></button>
+            </li>
+          </ul>
         </section>
         <menu>
           <button id="offline-ok" data-l10n-id="ok">Ok</button>
-          <button id="offline-retry" data-l10n-id="retry">Retry</button>
+          <button id="offline-retry" class="recommend" data-l10n-id="retry">Retry</button>
         </menu>
       </form>
     </section>
