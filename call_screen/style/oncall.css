@@ -14,9 +14,9 @@ html, body {
   height: 100%;
   position: absolute;
   display: none;
-  
+
   background: black;
-  
+
   z-index: 1000;
   pointer-events: auto;
 }
@@ -283,7 +283,7 @@ h1, h2, h3 {
   bottom: 2.5rem !important;
   left: calc(50% - 3.75rem) !important;
   z-index: 10;
-  
+
   border-radius: 3.75rem !important;
   overflow: hidden !important;
 }
@@ -445,19 +445,23 @@ body[data-call-status='dialing'] .remote-bubble-shadow {
  */
 
 #call-bar {
-  text-align: center;
+  text-indent: 4rem;
   line-height: 4rem;
-  font-size: 2rem;
+  font-size: 1.9rem;
   color: white;
-  font-weight: 300;
+  font-weight: 500;
   display: none;
   position: absolute;
   z-index: 100;
   width: 100%;
   bottom: 0;
   left: 0;
-  background: green;
+  background: #4e4e4e url(images/ico_callstatusbar.png) 1rem center no-repeat;
   height: 4rem;
+}
+
+#call-bar span {
+  font-weight: 400;
 }
 
 
