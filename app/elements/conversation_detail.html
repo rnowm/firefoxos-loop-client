@@ -1,0 +1,45 @@
+<element name="conversation-detail" extends="section">
+
+  <link rel="stylesheet" type="text/css" href="style/conversation_detail.css"></link>
+  <script src="js/screens/conversation_detail.js"></script>
+
+  <template>
+    <header>
+      <button class="icon icon-close"></button>
+      <h1 data-l10n-id="conversationDetailTitle"></h1>
+    </header>
+    <section>
+      <form data-type="object">
+        <section>
+          <ul>
+            <li class="input">
+              <p>
+                <input type="text" dir="auto"></input>
+                <button type="reset"></button>
+              </p>
+              <p class="counter"></p>
+            </li>
+          </ul>
+          <h2>Camera</h2>
+          <ul class="bb-radio">
+            <li>
+              <label>
+                <input type="radio" name="camera-back">
+                <span data-icon="tick">Back</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="camera-front">
+                <span data-icon="tick">Front</span>
+              </label>
+            </li>
+          </ul>
+        </section>
+      </form>
+    </section>
+    <footer class="gaia-footer vbox">
+      <button class="call" data-l10n-id="call"></button>
+    </footer>
+  </template>
+</element>

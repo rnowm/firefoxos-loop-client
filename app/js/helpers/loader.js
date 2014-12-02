@@ -20,7 +20,8 @@
 
   const PANELS_ID = {
     feedback: 'feedback',
-    create_room: 'new-room'
+    create_room: 'new-room',
+    conversation_detail: 'conversation-detail'
   }
 
   var Loader = {
@@ -64,6 +65,16 @@
         HtmlImports.populate(function() {
           resolve(RoomCreate);
         }, PANELS_ID.create_room);
+      });
+    },
+    getConversationDetail: function() {
+      if (window.ConversationDetail) {
+        return Promise.resolve(ConversationDetail);
+      }
+      return new Promise((resolve, reject) => {
+        HtmlImports.populate(function() {
+          resolve(ConversationDetail);
+        }, PANELS_ID.conversation_detail);
       });
     },
     getRoomDetail: function() {

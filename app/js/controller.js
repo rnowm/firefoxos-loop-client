@@ -255,11 +255,17 @@
       activity.onerror = onerror;
     },
 
-    pickAndCall: function() {
+    startConversation: function() {
       Controller.pickContact(
         function onContactRetrieved(contact) {
-          Controller.callContact(contact, Settings.isVideoDefault);
-          Telemetry.updateReport('callsFromContactPicker');
+          Loader.getConversationDetail().then((ConversationDetail) => {
+            ConversationDetail.show().then((params) => {
+              Controller.callContact(contact, Settings.isVideoDefault);
+              Telemetry.updateReport('callsFromContactPicker');
+            }, () => {
+              // Dismissed conversation
+            });
+          });
         },
         function onError() {
           // TODO Check if needed to show any prompt to the user

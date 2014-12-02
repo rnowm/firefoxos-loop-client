@@ -795,7 +795,7 @@
     });
 
     toolbarFooter.querySelector('.new-conversation').addEventListener('click', () => {
-      _toggleToolbar(Controller.pickAndCall);
+      _toggleToolbar(Controller.startConversation);
     });
 
     document.addEventListener('visibilitychange', () => {
