@@ -8,35 +8,31 @@
       <button class="icon icon-close"></button>
       <h1 data-l10n-id="conversationDetailTitle"></h1>
     </header>
-    <section>
-      <form data-type="object">
-        <section>
-          <ul>
-            <li class="input">
-              <p>
-                <input type="text" dir="auto"></input>
-                <button type="reset"></button>
-              </p>
-              <p class="counter"></p>
-            </li>
-          </ul>
-          <h2>Camera</h2>
-          <ul class="bb-radio">
-            <li>
-              <label>
-                <input type="radio" name="camera-back">
-                <span data-icon="tick">Back</span>
-              </label>
-            </li>
-            <li>
-              <label>
-                <input type="radio" name="camera-front">
-                <span data-icon="tick">Front</span>
-              </label>
-            </li>
-          </ul>
-        </section>
+    <section class="fit scroll">
+      <form>
+        <p>
+          <input type="text" dir="auto"></input>
+          <button type="reset"></button>
+        </p>
+        <p class="counter"></p>
       </form>
+      <section class="gaia-list">
+        <header>Camera</header>
+        <ul>
+          <li class="active icon icon-camera-back">
+            <label class="pack-radio">
+              <input type="radio" id="camera-back" name="select-camera">
+              <span>Back</span>
+            </label>
+          </li>
+          <li class="active icon icon-camera-front">
+            <label class="pack-radio">
+              <input type="radio" id="camera-front" name="select-camera">
+              <span>Front</span>
+            </label>
+          </li>
+        </ul>
+      </section>
     </section>
     <footer class="gaia-footer vbox">
       <button class="call" data-l10n-id="call"></button>

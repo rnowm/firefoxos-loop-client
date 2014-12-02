@@ -1,17 +1,7 @@
-#conversation-detail section {
-  height: calc(100% - 10rem);
-}
-
 #conversation-detail form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 3rem 1.5rem 0 1.5rem;
-}
-
-#conversation-detail form p {
-  width: 100%;
+  padding: 3rem 0 4rem;
+  margin: 0 1.5rem;
+  border-bottom: 0.1rem solid #e7e7e7;
 }
 
 #conversation-detail form p.counter {
@@ -31,6 +21,32 @@
   color: #b90000;
 }
 
+#conversation-detail .gaia-list header {
+  text-transform: none;
+}
+
+.gaia-list li.icon {
+  background-position: 22px center;
+  padding-left: 45px;
+}
+
+.icon-camera-front {
+  background-image: url("images/ico_Camerafront.png");
+}
+
+.icon-camera-back {
+  background-image: url("images/ico_Camerarear.png");
+}
+
+label.pack-radio input ~ span {
+  font-weight: 300;
+  font-style: italic;
+}
+
+label.pack-radio input:checked ~ span {
+  font-weight: 500;
+}
+
 #conversation-detail .gaia-footer {
   border-top: none;
   padding-bottom: 1.5rem;
@@ -39,4 +55,44 @@
 #conversation-detail .gaia-footer button {
   background-color: #0dca95;
   color: white;
+}
+
+/*
+  MEDIA QUERIES FOR device-pixel-ratio
+*/
+
+@media (min--moz-device-pixel-ratio: 1.5) {
+
+  .icon-camera-front {
+    background-image: url("images/ico_Camerafront@1.5x.png");
+  }
+
+  .icon-camera-back {
+    background-image: url("images/ico_Camerarear@1.5x.png");
+  }
+
+}
+
+@media (min--moz-device-pixel-ratio: 2) {
+
+  .icon-camera-front {
+    background-image: url("images/ico_Camerafront@2x.png");
+  }
+
+  .icon-camera-back {
+    background-image: url("images/ico_Camerarear@2x.png");
+  }
+
+}
+
+@media (min--moz-device-pixel-ratio: 2.25) {
+
+  .icon-camera-front {
+    background-image: url("images/ico_Camerafront@2.25x.png");
+  }
+
+  .icon-camera-back {
+    background-image: url("images/ico_Camerarear@2.25x.png");
+  }
+
 }
