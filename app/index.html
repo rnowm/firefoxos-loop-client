@@ -82,14 +82,18 @@
     <script defer src="js/branding.js"></script>
 
     <script defer src="js/boot.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="style/room_ui.css"></link>
+  <script src="js/screens/room/room_ui.js"></script>
   </head>
 
-  <body role="application" class="" data-transition="" data-uidebug="">
+  <body role="application" data-rotation="90" class="" data-transition="" data-uidebug="">
     <section id="loading-overlay" class="dialog" role="region" data-type="dialog">
       <p><progress class="light"></progress></p>
       <p id="loading-overlay-message"></p>
     </section>
-    <section id="splash-screen" class="show">
+    <section id="splash-screen" class="">
     </section>
     <section id="error-screen" class="dialog">
       <!--
@@ -237,7 +241,20 @@
     <section id="room-history-panel" class="panel skin-comms">
       Panel ready to add the history given a room token
     </section>
-    <section id="room-ui" is="room-ui" role="region" class="panel vbox skin-comms hide">
+    <section id="room-ui" is="room-ui" role="region" class="panel show" style="transform: translateX(-100%)">
+      <div class="room-ui">
+        <h1>Hello</h1>
+        <div class="room-info">
+          <h2>02:34</h2>
+          <h3>calling</h3>
+        </div>
+        <button id="leave-room"></button>
+        <button id="room-settings-togglemic"></button>
+        <button id="room-settings-switchspeaker"></button>
+        <button id="room-settings-togglevideo"></button>
+        <div id="room-local-video"><span class="content"></span></div>
+        <div id="room-remote-video"><span class="content"></span></div>
+      </div>
     </section>
     <section id="share-panel" class="modal share skin-comms hide" role="region">
       <!--

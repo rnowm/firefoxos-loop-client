@@ -4,13 +4,18 @@
   <script src="js/screens/room/room_ui.js"></script>
 
   <template>
-    <ul>
-      <li><button id="leave-room">Leave room</button></li>
-      <li><button id="room-settings-togglemic">Toggle mic</button></li>
-      <li><button id="room-settings-switchspeaker">Switch speaker</button></li>
-      <li><button id="room-settings-togglevideo">Toggle video</button></li>
-      <li><div id="room-local-video"></div></li>
-      <li><div id="room-remote-video"></div></li>
-    </ul>
+    <div class="room-ui">
+      <h1>Hello</h1>
+      <div class="room-info">
+        <h2>02:34</h2>
+        <h3>calling</h3>
+      </div>
+      <button id="leave-room"></button>
+      <button id="room-settings-togglemic"></button>
+      <button id="room-settings-switchspeaker"></button>
+      <button id="room-settings-togglevideo"></button>
+      <div id="room-local-video"><span class="content"></span></div>
+      <div id="room-remote-video"><span class="content"></span></div>
+    </div>
   </template>
 </element>
