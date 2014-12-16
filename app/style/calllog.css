@@ -52,6 +52,16 @@
   pointer-events: none;
 }
 
+.section-entries li .primary-action,
+.section-entries li .secondary-action {
+  pointer-events: all;
+}
+
+.section-entries li .secondary-action:active {
+  background-color: transparent;
+  color: #858585;
+}
+
 #rooms-section.empty .section-empty {
   background-image: url(images/empty_rooms_log.png);
 }
