@@ -3,8 +3,9 @@
 
   var debug = Config.debug;
 
-  var wizardHeader, wizardPanel, wizardTutorial, progressBar;
+  var wizardPanel, wizardTutorial, progressBar;
   var wizardWorld, wizardMainPins, wizardPins, wizardDottedLine, wizardLogin;
+  var roomEmpty, roomJoin, roomFull;
   var currentStep = 0, stepsLength;
   var viewportWidth;
   // Desplazamiento a aplicar
@@ -169,10 +170,6 @@
         clearAnimation();
         pinsAnimation = false;
       }
-
-      if (promptTimer) {
-        clearTimeout(promptTimer);
-      }
     }
     if (currentStep === 2) {
       pinsAnimation = true;
@@ -183,14 +180,23 @@
             wizardPins.classList.add('move');
             onAnimateEnd(wizardPins, function() {
               wizardPins.classList.add('animate');
-              promptTimer = setTimeout(function timer() {
-                wizardPanel.classList.add('overlay');
-                wizardLogin.classList.add('show');
-              },1000);
             });
           })
         });
         wizardMainPins.classList.add('move');
+      })
+    }
+    if (currentStep === 5) {
+      if (promptTimer) {
+        clearTimeout(promptTimer);
+      }
+    }
+    if (currentStep === 6) {
+      onAnimateEnd(roomFull, function(){
+        promptTimer = setTimeout(function timer() {
+          wizardPanel.classList.add('overlay');
+          wizardLogin.classList.add('show');
+        },1000);
       })
     }
     wizardPanel.dataset.step = currentStep;
@@ -203,7 +209,6 @@
         return;
       }
       // Cache the viewport width
-      wizardHeader = document.getElementById('wizard-tutorial-header');
       wizardPanel = document.getElementById('wizard-panel');
       wizardTutorial = document.getElementById('wizard-tutorial-slideshow');
       progressBar = document.getElementById('wizard-tutorial-progress');
@@ -212,6 +217,9 @@
       wizardPins = document.getElementById('wizard-pins');
       wizardDottedLine = document.getElementById('wizard-dottedline');
       wizardLogin = document.getElementById('wizard-login');
+      roomEmpty = document.querySelector('.empty-room');
+      roomJoin = document.querySelector('.join-room');
+      roomFull = document.querySelector('.full-room');
 
       // Get the steps directly from the HTML
       var tutorialSteps = wizardTutorial.children;

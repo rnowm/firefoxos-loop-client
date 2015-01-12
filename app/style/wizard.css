@@ -28,6 +28,7 @@
   font-size: 2.7rem;
   line-height: 3.3rem;
   font-weight: 300;
+  display: block;
 }
 
 #wizard-panel.overlay #wizard-tutorial-section header,
@@ -82,9 +83,9 @@
   font-size: 1.7rem;
   font-style: italic;
   position: absolute;
-  right: 0;
+  right: 1.5rem;
   bottom: 4rem;
-  left: 0;
+  left: 1.5rem;
 }
 
 .layer-0 { z-index: 0; }
@@ -302,6 +303,83 @@
   left: 18.2rem;
 }
 
+#phone-screens {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: url(images/wizard/phoneframe.png) center bottom no-repeat;
+  background-size: 32rem auto;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+#phone-screens li {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 32rem auto;
+}
+
+.phone-screen-1 {
+  background-image: url(images/wizard/phonescreen1.png);
+}
+
+.phone-screen-2 {
+  background-image: url(images/wizard/phonescreen2.png);
+}
+
+.phone-screen-3 {
+  background-image: url(images/wizard/phonescreen3.png);
+}
+
+#phone-screens .conversation {
+  background-image: url(images/wizard/icon_conversation.png);
+  transform: scale(0.3);
+  transform-origin: 60% calc(100% - 14rem) 0px;
+  transition: transform 0.4s ease-in-out,
+              opacity 0.4s ease-in-out;
+}
+
+#phone-screens .room {
+  background-image: url(images/wizard/icon_room.png);
+  transform: scale(0.3);
+  transform-origin: 40% calc(100% - 14rem) 0px;
+  transition: transform 0.4s ease-in-out,
+              opacity 0.4s ease-in-out;
+}
+
+#phone-screens .share-room {
+  background-image: url(images/wizard/share_room.png);
+  transform: scale(0.3);
+  transform-origin: 50% calc(100% - 23rem) 0px;
+  transition: transform 0.4s ease-in-out,
+              opacity 0.4s ease-in-out;
+}
+
+#phone-screens .empty-room,
+#phone-screens .join-room,
+#phone-screens .full-room {
+  opacity: 1;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+#phone-screens .empty-room {
+  background-image: url(images/wizard/empty_room.png);
+}
+
+#phone-screens .join-room {
+  background-image: url(images/wizard/join_room.png);
+}
+
+#phone-screens .full-room {
+  background-image: url(images/wizard/full_room.png);
+}
+
+
 /*
  * Animations from 0 to 1
  */
@@ -399,6 +477,77 @@
 @keyframes bubblerigth {
   0, 90%, 100% { opacity: 1; }
   30%, 50% { opacity: 0.6; }
+}
+
+/*
+ * Animations from 2 to 3
+ */
+
+[data-step="3"] #phone-screens,
+[data-step="4"] #phone-screens,
+[data-step="5"] #phone-screens,
+[data-step="6"] #phone-screens {
+  transform: translateY(0);
+}
+
+[data-step="3"] #phone-screens .phone-screen-1 {
+  opacity: 1;
+}
+
+[data-step="3"] #phone-screens .conversation {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/*
+ * Animations from 3 to 4
+ */
+
+[data-step="4"] #phone-screens .phone-screen-1 {
+  opacity: 1;
+}
+
+[data-step="4"] #phone-screens .room {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/*
+ * Animations from 4 to 5
+ */
+
+[data-step="5"] #phone-screens .phone-screen-2 {
+  opacity: 1;
+}
+
+[data-step="5"] #phone-screens .share-room {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*
+ * Animations from 5 to 6
+ */
+
+[data-step="6"] #phone-screens .phone-screen-3 {
+  opacity: 1;
+}
+
+[data-step="6"] #phone-screens .empty-room {
+  transform: translateX(0);
+  transition-delay: 1s;
+}
+
+[data-step="6"] #phone-screens .join-room {
+  transform: translateX(0);
+  transition-delay: 2.5s;
+}
+
+[data-step="6"] #phone-screens .full-room {
+  transform: translateX(0);
+  transition-delay: 4s;
 }
 
 
