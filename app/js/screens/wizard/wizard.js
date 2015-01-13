@@ -39,7 +39,7 @@
 
       if (!isFirstUse) {
         // Show the right panel
-        wizardPanel.dataset.step = 2;
+        wizardPanel.dataset.step = 6;
         wizardPanel.classList.add('login');
         wizardLogin.classList.add('show');
         success();

@@ -28,6 +28,7 @@
   font-size: 2.7rem;
   line-height: 3.3rem;
   font-weight: 300;
+  display: block;
 }
 
 #wizard-panel.overlay #wizard-tutorial-section header,
@@ -82,9 +83,9 @@
   font-size: 1.7rem;
   font-style: italic;
   position: absolute;
-  right: 0;
+  right: 1.5rem;
   bottom: 4rem;
-  left: 0;
+  left: 1.5rem;
 }
 
 .layer-0 { z-index: 0; }
@@ -302,6 +303,147 @@
   left: 18.2rem;
 }
 
+#phone-screens {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: url(images/wizard/phoneframe.png) center no-repeat;
+  background-size: 32rem auto;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+#phone-screens li {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32rem auto;
+}
+
+.phone-screen-1 {
+  opacity: 0;
+  background-image: url(images/wizard/phonescreen1.png);
+  transition: opacity 0.4s ease;
+}
+
+.phone-screen-2 {
+  opacity: 0;
+  background-image: url(images/wizard/phonescreen2.png);
+  transition: opacity 0.4s ease;
+}
+
+.phone-screen-3 {
+  opacity: 0;
+  background-image: url(images/wizard/phonescreen3.png);
+  transition: opacity 0.4s ease;
+}
+
+#phone-screens .conversation {
+  background-image: url(images/wizard/icon_conversation.png);
+  transform: scale(0.35);
+  transform-origin: 56% calc(50% + 7.5rem);
+  transition: transform 0.4s ease,
+              opacity 0.4s ease;
+}
+
+#phone-screens .room {
+  background-image: url(images/wizard/icon_room.png);
+  transform: scale(0.35);
+  transform-origin: 43% calc(50% + 7.5rem);
+  transition: transform 0.4s ease,
+              opacity 0.4s ease;
+}
+
+#phone-screens .share-room {
+  background-image: url(images/wizard/share_room.png);
+  transform: scale(0.5);
+  transform-origin: 50% calc(50% - 3rem);
+  transition: transform 0.4s ease-in-out,
+              opacity 0.4s ease-in-out;
+}
+
+#phone-screens .empty-room,
+#phone-screens .join-room,
+#phone-screens .full-room {
+  opacity: 1;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+#phone-screens .empty-room {
+  background-image: url(images/wizard/empty_room.png);
+}
+
+#phone-screens .join-room {
+  background-image: url(images/wizard/join_room.png);
+}
+
+#phone-screens .full-room {
+  background-image: url(images/wizard/full_room.png);
+}
+
+/*
+ * Wizard login
+ */
+
+#wizard-login {
+  display: flex;
+  background-color: rgba(0, 153, 204, 0.75);
+  opacity: 0;
+  transition-delay: 0;
+  pointer-events: none;
+}
+
+#wizard-login .gaia-footer {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(100%);
+  transition-delay: 0;
+  pointer-events: all;
+}
+
+#wizard-login .gaia-footer p {
+  text-align: center;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  margin: 0;
+}
+
+#wizard-login .gaia-footer p a {
+  color: #fff;
+  outline: none;
+  text-decoration: underline;
+}
+
+#wizard-login .gaia-footer p a:active {
+  color: #333;
+}
+
+#wizard-login .gaia-footer button {
+  margin: 1rem 0 0 0;
+  background-color: #fff;
+}
+
+#wizard-login .gaia-footer button:active {
+  background-color: #B2F2FF;
+}
+
+.link {
+  color: blue;
+  cursor: pointer;
+}
+
 /*
  * Animations from 0 to 1
  */
@@ -401,94 +543,89 @@
   30%, 50% { opacity: 0.6; }
 }
 
-
 /*
- * Wizard login
+ * Animations from 2 to 3
  */
 
-#wizard-login {
-  display: flex;
-  background-color: rgba(0, 153, 204, 0.75);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
-
-#wizard-login.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-#wizard-login .gaia-footer {
-  background: none;
-  border: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  transform: translateY(20rem);
-  transition: all 0.4s ease-in;
-}
-
-#wizard-login.show .gaia-footer {
-  opacity: 1;
+[data-step="3"] #phone-screens,
+[data-step="4"] #phone-screens,
+[data-step="5"] #phone-screens,
+[data-step="6"] #phone-screens {
   transform: translateY(0);
 }
 
-#wizard-login .gaia-footer p {
-  text-align: center;
-  color: #fff;
-  font-size: 1.3rem;
-  line-height: 1.7rem;
-  margin: 0;
-}
-
-#wizard-login .gaia-footer p a {
-  color: #fff;
-  outline: none;
-  text-decoration: underline;
-}
-
-#wizard-login .gaia-footer p a:active {
-  color: #333;
-}
-
-#wizard-login .gaia-footer button {
-  margin: 1rem 0 0 0;
-  background-color: #fff;
-}
-
-#wizard-login .gaia-footer button:active {
-  background-color: #B2F2FF;
-}
-
-/* .login: Used when FTU has already happened */
-.login #wizard-elements #wizard-main-pins,
-.login #wizard-elements #wizard-pins {
-  transform: translateY(0);
+[data-step="3"] #phone-screens .phone-screen-1 {
   opacity: 1;
 }
 
-.login #wizard-elements .pins-container li.left span {
-  opacity: 0.9;
+[data-step="3"] #phone-screens .conversation {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.login #wizard-elements .pins-container li.right span {
-  opacity: 0.6;
+
+/*
+ * Animations from 3 to 4
+ */
+
+[data-step="4"] #phone-screens .phone-screen-1 {
+  opacity: 1;
 }
 
-.login #wizard-elements > div,
-.login #wizard-tutorial-slideshow,
-.login #wizard-tutorial-progress,
-.login #wizard-tutorial-section header {
-  display: none;
+[data-step="4"] #phone-screens .room {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.link {
-  color: blue;
-  cursor: pointer;
+
+/*
+ * Animations from 4 to 5
+ */
+
+[data-step="5"] #phone-screens .phone-screen-2 {
+  opacity: 1;
 }
+
+[data-step="5"] #phone-screens .share-room {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/*
+ * Animations from 5 to 6
+ */
+
+[data-step="6"] #phone-screens .phone-screen-3 {
+  opacity: 1;
+}
+
+[data-step="6"] #phone-screens .empty-room {
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+
+[data-step="6"] #phone-screens .join-room {
+  transform: translateX(0);
+  transition-delay: 1s;
+}
+
+[data-step="6"] #phone-screens .full-room {
+  transform: translateX(0);
+  transition-delay: 1.5s;
+}
+
+[data-step="6"] #wizard-login {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out 2.5s;
+}
+
+[data-step="6"] #wizard-login .gaia-footer {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease-in 2.5s;
+}
+
 
 /*
  * Progress indicator
@@ -589,6 +726,46 @@
     background-image: url(images/wizard/bubbleright@1.5x.png);
   }
 
+  #phone-screens {
+    background-image: url(images/wizard/phoneframe@1.5x.png);
+  }
+
+  .phone-screen-1 {
+    background-image: url(images/wizard/phonescreen1@1.5x.png);
+  }
+
+  .phone-screen-2 {
+    background-image: url(images/wizard/phonescreen2@1.5x.png);
+  }
+
+  .phone-screen-3 {
+    background-image: url(images/wizard/phonescreen3@1.5x.png);
+  }
+
+  #phone-screens .conversation {
+    background-image: url(images/wizard/icon_conversation@1.5x.png);
+  }
+
+  #phone-screens .room {
+    background-image: url(images/wizard/icon_room@1.5x.png);
+  }
+
+  #phone-screens .share-room {
+    background-image: url(images/wizard/share_room@1.5x.png);
+  }
+
+  #phone-screens .empty-room {
+    background-image: url(images/wizard/empty_room@1.5x.png);
+  }
+
+  #phone-screens .join-room {
+    background-image: url(images/wizard/join_room@1.5x.png);
+  }
+
+  #phone-screens .full-room {
+    background-image: url(images/wizard/full_room@1.5x.png);
+  }
+
 }
 
 @media (min--moz-device-pixel-ratio: 2) {
@@ -649,6 +826,46 @@
     background-image: url(images/wizard/bubbleright@2x.png);
   }
 
+  #phone-screens {
+    background-image: url(images/wizard/phoneframe@2x.png);
+  }
+
+  .phone-screen-1 {
+    background-image: url(images/wizard/phonescreen1@2x.png);
+  }
+
+  .phone-screen-2 {
+    background-image: url(images/wizard/phonescreen2@2x.png);
+  }
+
+  .phone-screen-3 {
+    background-image: url(images/wizard/phonescreen3@2x.png);
+  }
+
+  #phone-screens .conversation {
+    background-image: url(images/wizard/icon_conversation@2x.png);
+  }
+
+  #phone-screens .room {
+    background-image: url(images/wizard/icon_room@2x.png);
+  }
+
+  #phone-screens .share-room {
+    background-image: url(images/wizard/share_room@2x.png);
+  }
+
+  #phone-screens .empty-room {
+    background-image: url(images/wizard/empty_room@2x.png);
+  }
+
+  #phone-screens .join-room {
+    background-image: url(images/wizard/join_room@2x.png);
+  }
+
+  #phone-screens .full-room {
+    background-image: url(images/wizard/full_room@2x.png);
+  }
+
 }
 
 @media (min--moz-device-pixel-ratio: 2.25) {
@@ -707,6 +924,46 @@
 
   #wizard-elements .pins-container li.right.large span {
     background-image: url(images/wizard/bubbleright@2.25x.png);
+  }
+
+  #phone-screens {
+    background-image: url(images/wizard/phoneframe@2.25x.png);
+  }
+
+  .phone-screen-1 {
+    background-image: url(images/wizard/phonescreen1@2.25x.png);
+  }
+
+  .phone-screen-2 {
+    background-image: url(images/wizard/phonescreen2@2.25x.png);
+  }
+
+  .phone-screen-3 {
+    background-image: url(images/wizard/phonescreen3@2.25x.png);
+  }
+
+  #phone-screens .conversation {
+    background-image: url(images/wizard/icon_conversation@2.25x.png);
+  }
+
+  #phone-screens .room {
+    background-image: url(images/wizard/icon_room@2.25x.png);
+  }
+
+  #phone-screens .share-room {
+    background-image: url(images/wizard/share_room@2.25x.png);
+  }
+
+  #phone-screens .empty-room {
+    background-image: url(images/wizard/empty_room@2.25x.png);
+  }
+
+  #phone-screens .join-room {
+    background-image: url(images/wizard/join_room@2.25x.png);
+  }
+
+  #phone-screens .full-room {
+    background-image: url(images/wizard/full_room@2x.png);
   }
 
 }
